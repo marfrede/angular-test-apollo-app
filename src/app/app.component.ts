@@ -18,9 +18,11 @@ export class AppComponent {
           query {
             aliens {
               name
+              planet
             }
           }
         `,
+        errorPolicy: 'all',
       })
       .pipe(takeUntilDestroyed())
       .subscribe((result) => console.log(result));
