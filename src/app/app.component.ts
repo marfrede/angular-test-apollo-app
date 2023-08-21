@@ -15,12 +15,9 @@ export class AppComponent {
     this.apollo
       .query({
         query: gql`
-          query GetLocations {
-            locations {
-              id
+          query {
+            aliens {
               name
-              description
-              photo
             }
           }
         `,

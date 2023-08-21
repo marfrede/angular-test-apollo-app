@@ -3,7 +3,7 @@ import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 
-const uri = 'https://flyby-router-demo.herokuapp.com/'; // <-- add the URL of the GraphQL server here
+const uri = 'https://localhost:5001/graphql'; // <-- add the URL of the GraphQL server here
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
     link: httpLink.create({ uri }),
