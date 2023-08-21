@@ -13,18 +13,20 @@ export class AppComponent {
 
   constructor() {
     this.apollo
-      .query({
+      .subscribe({
         query: gql`
-          query {
-            aliens {
+          subscription {
+            alienChanged {
               name
-              planet
             }
           }
         `,
         errorPolicy: 'all',
       })
       .pipe(takeUntilDestroyed())
-      .subscribe((result) => console.log(result));
+      .subscribe({
+        next: (result) => console.log('result :', result),
+        error: (error) => console.log('error: ', error),
+      });
   }
 }
